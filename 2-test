@@ -1,0 +1,153 @@
+5. Print the factorial of a given number, n.
+********************************************************************************************************************************
+public class colder {
+    public static void main(String[] args) {
+        int k = 5;
+        int t = 1;
+        for (int i =1; i<=k; i++) {
+            t=i*t;
+        }
+      System.out.println(t);
+    }
+}
+
+15. Merge Arrays: Write a function that merges two arrays into a single array. 
+********************************************************************************************************************************
+public class colder {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3};
+        int[] arr2 = {4, 5, 6};
+
+        int nl = arr1.length + arr2.length;
+        int[] newarr = new int[nl];
+
+        for (int i = 0; i < arr1.length; i++) {
+            newarr[i] = arr1[i];
+        }
+
+        for (int i = 0; i < arr2.length; i++) {
+            newarr[arr1.length + i] = arr2[i];
+        }
+
+        for (int num : newarr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+25. Create an array of numbers. Calculate and print the sum of all elements in the array. 
+********************************************************************************************************************************
+public class colder {
+    public static void main(String[] args) {
+        int[] arr1 = {7, 2, 3};
+        int s = 1;
+        for (int num : arr1) {
+            s=s*num;
+        }
+        System.out.print("product  "+s);
+    }
+}
+
+35. Create an array of numbers. Write a program that displays every even number in the array. 
+********************************************************************************************************************************
+public class colder {
+    public static void main(String[] args) {
+        int[] arr1 = {7, 2, 3, 9, 10, 12, 15};
+        for (int num : arr1) {
+            if (num%2==0) {
+                System.out.println(num);
+            }
+        }
+    }
+}
+
+45. Create an array of numbers. Write a program that outputs the minimum even element of the array.
+********************************************************************************************************************************
+public class colder {
+    public static void main(String[] args) {
+        int[] arr1 = {2, 7, 3, 9, 10, 12, 15};
+        int mina = arr1[0];
+
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] < mina && arr1[i] % 2 == 0) {
+                mina = arr1[i];
+            }
+        }
+
+        System.out.println("minimum even num: " + mina);
+    }
+}
+
+55. Write a program using for loop that displays all the numbers from 1 to 50, which are divisible by 5 without remainder.
+********************************************************************************************************************************
+public class colder {
+        public static void main(String[] args) {
+            for (int i = 1; i <= 50; i++) {
+                if (i % 5 == 0) {
+                    System.out.println(i);
+                }
+            }
+        }
+}
+
+65. Write a program that finds the maximum element in an array of numbers and displays it on the screen.
+********************************************************************************************************************************
+public class colder {
+    public static void main(String[] args) {
+        int[] arr1 = {7, 2, 3, 9, 10, 12, 15};
+        int maxi = arr1[0];
+        for (int i = 1; i < arr1.length; i++) {
+            if (arr1[i] > maxi) {
+                maxi = arr1[i];
+            }
+        }
+        System.out.println("maximum element: " + maxi);
+    }
+}
+
+75. Given an array {"Volvo", "BMW", "Ford", "Mazda"}, how many elements does this array contain? 
+********************************************************************************************************************************
+public class colder {
+    public static void main(String[] args) {
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+        System.out.println("length: " + cars.length);
+    }
+}
+
+
+85.  Келесі екіөлшемді массивті құр:
+1 2 3 4 
+5 6 7 8
+********************************************************************************************************************************
+public class colder {
+    public static void main(String[] args) {
+        int[][] two= {
+                {1, 2, 3, 4},
+                {5, 6, 7, 8},
+        };
+
+        for (int i = 0; i < two.length; i++) {
+            for (int j = 0; j < two[i].length; j++) {
+                System.out.print(two[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+95.  1, 2, 3, 4, 5 массивінен ең үлкен элементті шығар.
+********************************************************************************************************************************
+public class colder {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int maxi = arr1[0];
+        for (int i = 1; i < arr1.length; i++) {
+            if (arr1[i] > maxi) {
+                maxi = arr1[i];
+            }
+        }
+        System.out.println("maximum element: " + maxi);
+    }
+}
