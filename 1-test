@@ -51,29 +51,94 @@ public class colder {
 45. Write a program that asks the user for the expiration date of his password (in days) and displays the message "Password is valid" if the period has
 not expired, and "Password has expired" if the expiration date has expired.
 ********************************************************************************************************************************
+import java.util.Scanner;
+public class colder {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int i = scanner.nextInt();
+        int a = 12345;
+        if (i==a) {
+            System.out.println("Not expired");
+        } else {
+            System.out.println("expired");
+        }
+    }
+}
 
-
-55. .Create a code that print equal when x is equal to y; otherwise return not equal. For example, (4, 5) ➞ not equal. Try without Scanner method
+55. Create a code that print equal when x is equal to y; otherwise return not equal. For example, (4, 5) ➞ not equal. Try without Scanner method
 ********************************************************************************************************************************
-
+import java.util.Scanner;
+public class colder {
+    public static void main(String[] args) {
+       int x = 4;
+       int y = 5;
+       if (x==y) {
+           System.out.println("Equal");
+       } else {
+           System.out.println("Not equal");
+       }
+    }
+}
 
 65. Create a code that takes an integer as an argument and prints "even" for even integers and "odd" for odd integers. For example, (5) ➞ odd, (148)
 ➞even. Try without Scanner method.
 ********************************************************************************************************************************
-
+import java.util.Scanner;
+public class colder {
+    public static void main(String[] args) {
+       int x = 148;
+       if (x%2==0) {
+           System.out.println("Even");
+       } else {
+           System.out.println("Odd");
+       }
+    }
+}
 
 75. Write a program that takes three integers and prints the smallest among them. For example, (5, 8, 7) ➞ 5. Hint: initializes a variable, assign min
 variable, compare if its smaller update value.
 ********************************************************************************************************************************
+import java.util.Scanner;
+public class colder {
+    public static void main(String[] args) {
+       int x = 151;
+       int y = 149;
+       int z = 150;
 
+       int min = x;
+
+       if (min > y) {
+           min = y;
+       }
+        if (min > z) {
+            min = z; }
+        System.out.println("Minimum "+ min);
+    }
+}
 
 85. Ask user to enter radius, program should execute area of circle. For example, (5) ➞ 78.5 area of circle = pi*r^2, pi=3.14
 ********************************************************************************************************************************
+public class colder {
+    public static void main(String[] args) {
+        int radius = 5; 
+        double pi = 3.14;
+        double area = pi * radius * radius;
+        System.out.println("The area  " + area);
+    }
+}
 
 
 95. Write a program that finds the product of all numbers from 1 to 5. Use for loop.
 ********************************************************************************************************************************
-
+public class colder {
+    public static void main(String[] args) {
+        int k = 1;
+        for (int i =1; i<=5; i++) {
+            k=k*i;
+        }
+      System.out.println(k);
+    }
+}
 
 
 
