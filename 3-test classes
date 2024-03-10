@@ -1,0 +1,101 @@
+5. Create a "Movie" class that has three fields title, year of release, and country.
+**************************************************************************************************************
+public class Movie {
+    String title;
+    int year;
+    String country;
+     public static void main(String[] args) {
+        Movie movie1 = new Movie();
+        movie1.title = "Yera";
+        movie1.yearOfRelease = 2024;
+        movie1.country = "KAZ";
+
+        System.out.println("Movie Title: " + movie1.title);
+        System.out.println("Year of Release: " + movie1.yearOfRelease);
+        System.out.println("Country: " + movie1.country);
+    }
+}
+
+}
+
+15. Create a Java class named Ministry tourism with two  attributes: ministr(string) and number(int). 
+Then, create an instance of the Ministry tourism class representing a ministr name "Ermek" with number 87018078007. Then, print the ministr name and phone number of the added ministr.
+**************************************************************************************************************
+public class Ministry {
+    String ministr;
+    int number;
+     public static void main(String[] args) {
+        Ministry tourism = new Ministry();
+        tourism.ministr = "Ermek";
+        tourism.number = 87018078007;
+
+        System.out.println("ministr: " + ministr.title);
+        System.out.println("number: " + movie1.number);
+    }
+}
+
+
+25.  Formulate a Java class called Song. Songs have attributes like title (String) and artist (String).
+Instantiate a song titled "Imagine" by the artist "John Lennon." Display the song's title and artist to appreciate its musical harmony.
+**************************************************************************************************************
+public class song {
+    String title;
+    String artist;
+
+    public void display() {
+        System.out.println("Title: " + title);
+        System.out.println("Artist: " + artist);
+    }
+
+    public static void main(String[] args) {
+        Song imagine = new Song();
+        imagine.title = "Imagine";
+        imagine.artist = "John Lennon";
+
+        imagine.display();
+    }
+}
+
+
+35. Develop a Java class named Exercise. Exercises have attributes like name (String) and duration in minutes (int). Create an exercise called "Running" with a duration of 30 minutes. 
+Display the exercise name and duration.
+**************************************************************************************************************
+public class exercise {
+    String name;
+    int duration;
+    public void display() {
+        System.out.println("Exercise Name: " + name);
+        System.out.println("Duration: " + duration + " minutes");
+    }
+
+    public static void main(String[] args) {
+        Exercise running = new Exercise();
+        running.name = "Running";
+        running.duration = 30;
+        running.display();
+    }
+}
+
+
+
+45. Write a class "Rectangle" with attributes "width" and "height". Implement a method to calculate the area of the rectangle. Create several objects of this class and output their areas.
+**************************************************************************************************************
+public class rectangle {
+    int width;
+    int length;
+    public int area() {
+        return width * length;
+    }
+    public static void main(String[] args) {
+        rectangle rec1 = new rectangle();
+        rec1.width = 5;
+        rec1.length = 10;
+        int area = rec1.area();
+        System.out.println("rectangle areea: " + area);
+    }
+}
+
+
+
+
+
