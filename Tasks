@@ -1,0 +1,52 @@
+Habr*********************************************************************************************************
+public class lib {
+    public static void main(String[] args) {
+        double[] a = {4, 6, 8, 5, 7};
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length - i - 1; j++) {
+                if (a[j] > a[j + 1]) {
+                    double temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println("sorted:");
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+        }
+    }
+}
+Conpetition*********************************************************************************************************
+import java.util.Scanner;
+
+public class lib {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("room a, b, h:");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int h = sc.nextInt();
+
+        System.out.println("door w, q:");
+        int w = sc.nextInt();
+        int q = sc.nextInt();
+
+        System.out.println("window s, p:");
+        int s = sc.nextInt();
+        int p = sc.nextInt();
+
+        System.out.println("can:");
+        int k = sc.nextInt();
+
+        int room = 2 * h * (a + b) - w * q - s * p;
+
+        int can = (room + k - 1) / k;
+
+        System.out.println(can);
+    }
+}
+*********************************************************************************************************
