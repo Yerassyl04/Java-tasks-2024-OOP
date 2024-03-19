@@ -1,4 +1,5 @@
-Habr*********************************************************************************************************
+Habr
+1-zadacha*********************************************************************************************************
 public class lib {
     public static void main(String[] args) {
         double[] a = {4, 6, 8, 5, 7};
@@ -19,7 +20,56 @@ public class lib {
         }
     }
 }
-Conpetition*********************************************************************************************************
+
+2-zadacha*********************************************************************************************************
+public class lib {
+    public static void main(String[] args) {
+
+        int n = 100;
+        double[] array = new double[n];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = Math.random();
+        }
+
+        double max = array[0]; 
+        double min = array[0];
+        double avg = 0;
+        for (int i = 0; i < array.length; i++) {
+            if(max < array[i])
+                max = array[i];
+            if(min > array[i])
+                min = array[i];
+            avg += array[i]/array.length;
+        }
+
+        System.out.println("max = " + max);
+        System.out.println("min = " + min);
+        System.out.println("avg = " + avg);
+    }
+}
+
+3-zadacha*********************************************************************************************************
+public class lib {
+    public static void main(String[] args) {
+        for(int i = 2; i <= 100; i ++){
+            boolean isPrime = true;
+
+            for(int j = 2; j < i; j++){
+                if(i % j == 0){
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if(isPrime){
+                System.out.println(i);
+            }
+        }
+}
+}
+
+Competition
+2-zadacha*********************************************************************************************************
 import java.util.Scanner;
 
 public class lib {
@@ -49,4 +99,49 @@ public class lib {
         System.out.println(can);
     }
 }
-*********************************************************************************************************
+3-zadacha*********************************************************************************************************
+import java.util.Scanner;
+
+public class lib {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int L = sc.nextInt();
+        int M = sc.nextInt();
+        int N = sc.nextInt();
+
+        int fridge = 0, micro = 0, tv = 0;
+        double bestf = 0, bestm = 0, bestt = 0;
+
+        for (int i = 1; i <= L; i++) {
+            int price = sc.nextInt();
+            int discount = sc.nextInt();
+            double dprice = price - (price * discount / 100.0);
+            if (dprice > bestf) {
+                fridge = i;
+                bestf = dprice;
+            }
+        }
+
+        for (int i = 1; i <= M; i++) {
+            int price = sc.nextInt();
+            int discount = sc.nextInt();
+            double discountedPrice = price - (price * discount / 100.0);
+            if (discountedPrice > bestm) {
+                micro = i;
+                bestm = discountedPrice;
+            }
+        }
+
+        for (int i = 1; i <= N; i++) {
+            int price = sc.nextInt();
+            int discount = sc.nextInt();
+            double discountedPrice = price - (price * discount / 100.0);
+            if (discountedPrice > bestt) {
+                tv = i;
+                bestt = discountedPrice;
+            }
+        }
+
+        System.out.println(fridge + " " + micro + " " + tv);
+    }
+}
