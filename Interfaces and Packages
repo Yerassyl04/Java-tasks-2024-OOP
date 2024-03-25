@@ -1,0 +1,116 @@
+-------------------------------------------------------------------------------------------------------------------
+Create an Interface Animal, add panda to this animal and implement
+
+interface Animal {
+    public void animalSound();
+    public void sleep();
+}
+class panda implements Animal {
+    public void animalSound() {
+        System.out.println("The panda cry");
+    }
+    public void sleep() {
+        System.out.println("Zzz");
+    }
+}
+
+class lib {
+    public static void main(String[] args) {
+        panda mypanda = new panda();
+        mypanda.animalSound();
+        mypanda.sleep();
+    }
+}
+-------------------------------------------------------------------------------------------------------------------
+Create an Muliple Interfaces Animal and Endangered, add panda to this animal and implement
+
+interface Animal {
+    public void animalSound();
+    public void sleep();
+}
+
+interface Endangered {
+    public void status();
+}
+
+class panda implements Animal, Endangered {
+    public void animalSound() {
+        System.out.println("The panda cry");
+    }
+    public void sleep() {
+        System.out.println("Zzz");
+    }
+    public void status() {
+        System.out.println("Endangered species");
+    }
+}
+
+class lib {
+    public static void main(String[] args) {
+        panda mypanda = new panda();
+        mypanda.animalSound();
+        mypanda.sleep();
+        mypanda.status();
+------------------------------------------------------------------------------------------------------------------
+Math operation using 
+public class lib {
+    public static double func(double x){
+        return Math.cos(Math.pow(x, 5)) + Math.pow(x, 4) - 345.3 * x - 23;
+    }
+
+    public static double  solve(double start, double end){
+        if(end - start <= 0.001){
+            return start;
+        }
+
+        double x = start + (end - start) / 2;
+
+        if(func(start) * func(x) > 0){
+            return solve(x, end);
+        } else {
+            return solve(start, x);
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(solve(0, 10));
+    }
+}
+-----------------------------------------------------------------------------------------------------------------
+6.0 Kelvin converter using Interfaces amd Classes
+interface Converter {
+    double value(double baseValue);
+}
+
+class KelvinConverter implements Converter {
+    @Override
+    public double value(double baseValue) {
+        return baseValue + 273.15;
+    }
+}
+public class lib {
+    public static void main(String[] args) {
+        double temperature = 23.5;
+        System.out.println("t = " +
+                new KelvinConverter().value(temperature));
+    }
+}
+------------------------------------------------------------------------------------------------------------------
+public class lib {
+    public static void main(String[] args) {
+        for (int i = 2; i <= 100; i++) {
+            boolean isPrime = true;
+
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                System.out.println(i);
+            }
+        }
+    }
+}
