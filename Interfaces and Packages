@@ -114,3 +114,42 @@ public class lib {
         }
     }
 }
+
+------------------------------------------------------------------------------------------------------------------
+
+class Shape {
+    private double volume;
+
+    public Shape(double volume) {
+        this.volume = volume;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+}
+
+class Ball extends Shape {
+    private double radius;
+
+    public Ball(double radius) {
+        super(Math.PI * Math.pow(radius, 3) * 4 / 3);
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+}
+
+
+//in another file 
+public class Main {
+
+    public static void main(String[] args) {
+        Ball ball = new Ball(4.5);
+
+        System.out.println("Ball volume: " + ball.getVolume());
+    }
+}
+
