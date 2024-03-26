@@ -148,8 +148,9 @@ public class lib {
 -----------------------------------------------------------------------------------------------------------------------
 
 import java.util.Scanner;
+import java.util.Arrays;
 
-public class lib {
+public class ACM {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -159,23 +160,40 @@ public class lib {
         for (int i = 0; i < N; i++) {
             times[i] = scanner.nextInt();
         }
-        
-        int first = 0, third = 0, fifth = 0;
-        for (int time : times) {
-            first += time;
-            third += time;
-            fifth += time;
+
+        int[] copy = Arrays.copyOf(times, times.length);
+
+        Arrays.sort(copy);
+
+        int first = 0;
+        for (int i = 0; i < N; i++) {
+            first += copy[i] * (N - i);
+        }
+
+        int fifth = 0;
+        for (int i = 0; i < N; i++) {
+            fifth += times[i] * (N - i);
+        }
+
+
+        int third = 0;
+        for (int i = 0; i < N; i++) {
+            third += times[i] * (i + 1);
         }
 
         int winner;
-        if (first< third && first < fifth) {
+        if (first <= third && first <= fifth) {
             winner = 1;
-        } else if (third < first && third < fifth) {
+        } else if (third < first && third <= fifth) {
             winner = 3;
         } else {
             winner = 5;
         }
 
+
+        System.out.println("Conclusion: win " + first);
+        System.out.println("Conclusion: win " + third);
+        System.out.println("Conclusion: win " + fifth);
         System.out.println("Conclusion: win " + winner);
 
         scanner.close();
