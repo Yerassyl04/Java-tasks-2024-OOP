@@ -1,0 +1,89 @@
+
+1 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+  public static void main(String[] args) {
+    String str1 = "I";
+    String str2 = "love";
+    String str3 = "Java";
+
+        String joinedStr = String.join(" ", str1, str2, str3);
+
+    System.out.println(joinedStr);
+  }
+}
+
+2 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+public class StringExample {
+    public static void main(String[] args) {
+        String s1 = "Hello, World!";
+
+        String s2 = "Hi there!";
+        int comparison = Integer.compare(s1.length(), s2.length());
+        System.out.println("Comparison result: " + comparison);
+
+        String[] words = s1.split(", ");
+        System.out.println("Words in the sentence:");
+        for (String word : words) {
+            System.out.println(word);
+        }
+
+        String appended = s1.concat(" How are you?");
+        System.out.println("Appended sentence: " + appended);
+
+        String withoutComma = s1.replace(",", "");
+        System.out.println("String without comma: " + withoutComma);
+
+        String lowercase = s1.toLowerCase();
+        System.out.println("Lowercase sentence: " + lowercase);
+
+        String replaced = s1.replace("Hello", "Hi");
+        System.out.println("Replaced sentence: " + replaced);
+    }
+}
+
+
+
+3 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+public Class Factorial {
+
+public static long getFactorial(final int number) {
+   if ((number >= 0) && (number < 21)) {
+       long fact = 1;
+       for (int i = 1; i <= number; i++) {
+           fact = fact * i;
+       }
+       return fact;
+   } else {
+
+       throw new IllegalArgumentException("THe argument isn't legal");
+   }
+}
+
+ public static void main(String[] args) {
+       System.out.println(getFactorial(-5));
+       System.out.println(getFactorial(21));
+
+   }
+}
+
+
+4 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+class Main {
+  public static void main(String[] args) {
+
+    try {
+      int divideByZero = 5 / 0;
+      System.out.println("Rest of code in try block");
+    } catch (ArithmeticException e) {
+      System.out.println("ArithmeticException => " + e.getMessage());
+    }
+
+  }
+}
+
+
+1 ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+1 ---------------------------------------------------------------------------------------------------------------------------------------------------------
