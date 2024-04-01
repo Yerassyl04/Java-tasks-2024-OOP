@@ -5,15 +5,12 @@ Habr 10 ENU 2024
 
 
 
-public class main{
-    public static void main(String[] args) {
-        
+public class main{ public static void main(String[] args) {
         int n = 100;
         double[] array = new double[n];
         for (int i = 0; i < array.length; i++) {
             array[i] = Math.random();
         }
-
         double max = array[0]; 
         double min = array[0];
         double avg = 0;
@@ -24,7 +21,6 @@ public class main{
                 min = array[i];
             avg += array[i]/array.length;
         }
-
         System.out.println("max = " + max);
         System.out.println("min = " + min);
         System.out.println("avg = " + avg);
