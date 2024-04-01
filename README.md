@@ -3,7 +3,7 @@ Habr 10 ENU 2024
 
 ### 1) Задача: Заполните массив случайным числами и выведите максимальное, минимальное и среднее значение. Для генерации случайного числа используйте метод Math.random(), который возвращает значение в промежутке [0, 1].
 **
-public class lib{
+public class main{
     public static void main(String[] args) {
 
         int n = 100;
@@ -26,6 +26,5 @@ public class lib{
         System.out.println("max = " + max);
         System.out.println("min = " + min);
         System.out.println("avg = " + avg);
-    }
-}
+    } }
 **
