@@ -25,7 +25,7 @@ public class lib{
         System.out.println("avg = " + avg);
     } }
     
-### Задача: Реализуйте алгоритм сортировки пузырьком для сортировки массива
+### Задача 2 Реализуйте алгоритм сортировки пузырьком для сортировки массива
 
 public class lib {
     public static void main(String[] args) {
@@ -48,11 +48,7 @@ public class lib {
     }
 }
 
-### Задача: Напишите программу, которая выводит на консоль простые числа в промежутке от [2, 100]. Используйте для решения этой задачи оператор "%" (остаток от деления) и циклы.
-
-
-
-
+### Задача 3: Напишите программу, которая выводит на консоль простые числа в промежутке от [2, 100]. Используйте для решения этой задачи оператор "%" (остаток от деления) и циклы.
 
 public class lib  {
     public static void main(String[] args) {
@@ -71,7 +67,10 @@ public class lib  {
         }
     }
 }
-### Задача: Создайте класс, который описывает вектор (в трёхмерном пространстве).
+
+
+
+### Задача 4 : Создайте класс, который описывает вектор (в трёхмерном пространстве).
 
 У него должны быть:
 конструктор с параметрами в виде списка координат x, y, z
@@ -143,10 +142,216 @@ public class lib {
         System.out.println("Subtraction of Vector 1 and Vector 2: " + vector1.subtract(vector2));
     }
 }
-### Задача:
-### Задача:
-### Задача:
-### Задача:
+### Задача 5: Есть ещё один вариант решения этой задачи. Можно создать массив, размер которого равен сумме всех весов. Тогда выбор случайного элемента сводится к генерации случайного индекса. 
+То есть, если дан массив значений [1, 2, 3], и массив весов [1, 2, 10], то можно сразу создать массив [1, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3] и извлекать из него случайный элемент:
+
+public class lib {
+    private int[] extended_values;
+
+    public lib(int[] values, int[] weights) {
+        int sum = 0;
+        for (int weight : weights) {
+            sum += weight;
+        }
+
+        extended_values = new int[sum];
+        int cursor = 0;
+
+        for (int i = 0; i < weights.length; i++) {
+            for (int j = 0; j < weights[i]; j++) {
+                extended_values[cursor++] = values[i];
+            }
+        }
+    }
+
+    public int getRandom() {
+        int random = (int) (Math.random() * extended_values.length);
+        return extended_values[random];
+    }
+
+    public static void main(String[] args) {
+        int[] values = {1, 2, 3};
+        int[] weights = {2, 1, 3};
+
+        lib randomFromArray = new lib(values, weights);
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Random value: " + randomFromArray.getRandom());
+        }
+    }
+}
+
+
+
+### Задача 6: Найдите корень уравнения
+$    cos(x^5) + x^4 - 345.3 * x - 23 = 0     $
+на отрезке [0; 10] с точностью по x не хуже, чем 0.001. Известно, что на этом промежутке корень единственный.
+Используйте для этого метод деления отрезка пополам (и рекурсию).
+
+public class lib {
+    public static double func(double x) {
+        return Math.cos(Math.pow(x, 5)) + Math.pow(x, 4) - 345.3 * x - 23;
+    }
+
+    public static double solve(double start, double end) {
+        if (end - start <= 0.001) {
+            return start;
+        }
+
+        double x = start + (end - start) / 2;
+
+        if (func(start) * func(x) > 0) {
+            return solve(x, end);
+        } else {
+            return solve(start, x);
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(solve(0, 10));
+    }
+}
+
+
+### Задача 7: Реализовать иерархию классов, описывающую трёхмерные фигуры
+
+
+class Shape {
+    private double volume;
+
+    public Shape(double volume) {
+        this.volume = volume;
+    }
+
+    public double getVolume() {
+        return volume;
+    }
+}
+
+class Ball extends Shape {
+    private double radius;
+
+    public Ball(double radius) {
+        super(Math.PI * Math.pow(radius, 3) * 4 / 3);
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+}
+
+
+//in another file 
+public class Main {
+
+    public static void main(String[] args) {
+        Ball ball = new Ball(4.5);
+
+        System.out.println("Ball volume: " + ball.getVolume());
+    }
+}
+
+
+### Задача 8 : Напишите класс BaseConverter для конвертации из градусов по Цельсию в
+Кельвины​, ​Фаренгейты​, и так далее. У класса должен быть метод convert, который
+и делает конвертацию.
+
+
+interface Converter {
+    double value(double baseValue);
+}
+
+class KelvinConverter implements Converter {
+    @Override
+    public double value(double baseValue) {
+        return baseValue + 273.15;
+    }
+}
+public class lib {
+    public static void main(String[] args) {
+        double temperature = 23.5;
+        System.out.println("t = " +
+                new KelvinConverter().value(temperature));
+    }
+}
+
+### Задача 9 :
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class lib {
+    public static void compare2Lists() {
+        ArrayList<Double> arrayList = new ArrayList<>();
+        LinkedList<Double> linkedList = new LinkedList<>();
+        final int N = 1000000;
+        final int M = 1000;
+        for (int i = 0; i < N; i++) {
+            arrayList.add(Math.random());
+            linkedList.add(Math.random());
+        }
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < M; i++) {
+            arrayList.get((int) (Math.random() * (N - 1)));
+        }
+        System.out.println("ArrayList: " + (System.currentTimeMillis() - startTime) + " msec");
+
+        startTime = System.currentTimeMillis();
+        for (int i = 0; i < M; i++) {
+            linkedList.get((int) (Math.random() * (N - 1)));
+        }
+        System.out.println("LinkedList: " + (System.currentTimeMillis() - startTime) + " msec");
+    }
+
+    public static void main(String[] args) {
+        compare2Lists();
+    }
+}
+
+
+### Задача 10 :
+
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+public class lib <T> implements Iterator<T> {
+
+    private T[] array;
+    private int index = 0;
+
+    public lib(T[] array) {
+        this.array = array;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return index < array.length;
+    }
+
+    @Override
+    public T next() {
+        if (!hasNext())
+            throw new NoSuchElementException();
+        return array[index++];
+    }
+
+    public static void main(String[] args) {
+        Integer[] array = {1, 2, 3, 4, 5};
+        lib<Integer> iterator = new lib<>(array);
+
+        // Iterate over the array and print its elements
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
+}
+
+
+
+
+
 ### Задача:
 ### Задача:
 ### Задача:
