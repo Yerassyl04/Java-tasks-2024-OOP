@@ -1,0 +1,152 @@
+1----------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+public class lib {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+
+        String mod = name.replaceAll("a", "");
+        System.out.println(mod);
+
+        scanner.close();
+    }
+}
+2----------------------------------------------------------------------------------------------
+Create a program that allows users to input their monthly expenses in different categories and then 
+calculates their total monthly expenses and average expenses per category.
+import java.util.Scanner;
+
+public class lib {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("enter monthly expenses for different categories.");
+
+        double totalExpenses = 0;
+        int numCategories;
+
+        System.out.print("the number of expense categories: ");
+        numCategories = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int i = 1; i <= numCategories; i++) {
+            System.out.print("enter expenses for category " + i + ": $");
+            double expenses = scanner.nextDouble();
+            totalExpenses += expenses;
+        }
+
+        double averageExpensePerCategory = totalExpenses / numCategories;
+
+        System.out.println("\ntotal month expenses: $" + totalExpenses);
+        System.out.println("average expenses per category" + averageExpensePerCategory);
+
+        scanner.close();
+    }
+}
+3----------------------------------------------------------------------------------------------
+import javax.swing.JOptionPane;   
+
+public class lib
+{
+    public static void main(String[] args)
+    {
+        String name;
+
+        name = JOptionPane.showInputDialog("What is your name? ");
+
+        JOptionPane.showMessageDialog(null, "Hello " + name);
+    }
+}
+
+4----------------------------------------------------------------------------------------------
+class MyThread implements Runnable {
+    String name;
+    Thread t;
+    MyThread(String threadName) {
+        name = threadName;
+        t = new Thread(this, name);
+        System.out.println("New thread: " + t);
+        t.start();
+    }
+
+    public void run() {
+        try {
+            for(int i = 5; i > 0; i--) {
+                System.out.println(name + ": " + i);
+                Thread.sleep(1000);
+            }
+        } catch (InterruptedException e) {
+            System.out.println(name + " Interrupted");
+        }
+        System.out.println(name + " exiting.");
+    }
+}
+
+class MultiThread {
+    public static void main(String args[]) {
+        new MyThread("One");
+        new MyThread("Two");
+        new MyThread("Three");
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            System.out.println("Main thread Interrupted");
+        }
+        System.out.println("Main thread exiting.");
+    }
+}
+
+5----------------------------------------------------------------------------------------------
+class Runner implements Runnable {
+    private String name;
+    private int distance;
+    private int speed;
+
+    Runner(String name, int speed) {
+        this.name = name;
+        this.speed = speed;
+        this.distance = 0;
+    }
+
+    public void run() {
+        try {
+            while (distance < 100) { // Finish line is at 100 units
+                distance += speed;
+                System.out.println(name + " has run " + distance + " units.");
+                Thread.sleep(1000);
+            }
+            System.out.println(name + " has crossed the finish line!");
+        } catch (InterruptedException e) {
+            System.out.println(name + " was interrupted.");
+        }
+    }
+}
+
+public class lib {
+    public static void main(String[] args) {
+        // Create runner threads
+        Runner runner1 = new Runner("Runner 1", 2); //  1 runs at speed 2 units/sec
+        Runner runner2 = new Runner("Runner 2", 3); //  2 runs at speed 3 units/sec
+
+        // Start the race
+        Thread thread1 = new Thread(runner1);
+        Thread thread2 = new Thread(runner2);
+        thread1.start();
+        thread2.start();
+
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            System.out.println("race interrupted.");
+        }
+        
+        System.out.println("race finished!");
+    }
+}
+
+
+
